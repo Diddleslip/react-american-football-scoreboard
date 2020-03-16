@@ -2,13 +2,14 @@
 import React, { useState }from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+import FunctionClick from "./homeTeam";
+import Test from "./awayTeam";
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
   let [countOne, setCountOne] = useState(0);
   let [countTwo, setCountTwo] = useState(0);
-  console.log(countOne);
 
   return (
     <div className="container">
@@ -31,13 +32,11 @@ function App() {
       </section>
       <section className="buttons">
         <div className="homeButtons">
+        <FunctionClick countOne = {countOne} setCountOne = {setCountOne}/>
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button onClick = {() => {setCountOne(countOne + 7)}} className="homeButtons__touchdown">Home Touchdown</button>
-          <button onClick = {() => {setCountOne(countOne + 3)}} className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
         <div className="awayButtons">
-          <button onClick = {() => {setCountTwo(countTwo + 7)}} className="awayButtons__touchdown">Away Touchdown</button>
-          <button onClick = {() => {setCountTwo(countTwo + 3)}} className="awayButtons__fieldGoal">Away Field Goal</button>
+          <Test countTwo = {countTwo} setCountTwo = {setCountTwo}/>
         </div>
       </section>
     </div>
